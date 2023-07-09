@@ -3,40 +3,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="static/style.css">
+    {% load static %}
+    <link href="{% static 'static/css/style.css' %}" rel="stylesheet" type="text/css">
     <title>Navbar</title>
 </head>
 <body>
 {% block content %}
 {% block navbar %}
-{{block.super}}
-<nav class="navbar navbar-dark" style="height:90px; background-color:#375a7f">
-    <button class="button type1">
-  <span class="btn-txt">Home</span>
-</button>
-    <button class="button type1">
-  <span class="btn-txt">About Us</span>
-</button>
-    <button class="button type1">
-  <span class="btn-txt">Services</span>
-</button>
-    <button class="button type1">
-  <span class="btn-txt">Reviews</span>
-</button>
-    <button class="button type1">
-  <span class="btn-txt">Contact Us</span>
-</button>
+{{ block.super }}
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href="#">WebsiteName</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item active dropdown">
+        <a class="nav-link dropdown-toggle btn" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Services
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item btn" href="#">Maths</a>
+          <a class="dropdown-item btn" href="#">Physics</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item btn" href="#">Coming Soon</a>
+        </div>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link btn" href="#">About Us<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link btn" href="#">Reviews<span class="sr-only">(current)</span></a>
+      </li>
+      <li class="nav-item active">
+        <a class="nav-link btn" href="#">Contact Us</a>
+      </li>
+    </ul>
+    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Request a Callback</button>
+  </div>
 </nav>
 {% endblock %}
-
-<p> HI </p>
-    <button style=" height: 50px;
-  width: 200px;">
-  <span class="btn-txt">Contact Us</span>
-</button>
-    <button class="button type1">
-  <span class="btn-txt">TEST</span>
-</button>
 {% endblock %}
 
 </body>

@@ -20,6 +20,7 @@ from tutor.views import index_view, reviews_view, callback_view, services_view ,
 
 
 urlpatterns = [
+    path('', index_view),
     path('admin/', admin.site.urls),
     path('index/', index_view),
     path('reviews/', reviews_view, name='reviews'),

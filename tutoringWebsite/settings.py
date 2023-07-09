@@ -39,9 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     #Other apps
+    'phonenumber_field',
 
     #My apps
-    'tutor'
+    'tutor',
 ]
 
 MIDDLEWARE = [
@@ -123,6 +124,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIR = [
+    BASE_DIR / 'tutor' / 'templates' / 'static',
+]
 STATIC_ROOT = 'tutor/templates/static/'
 
 # Default primary key field type
