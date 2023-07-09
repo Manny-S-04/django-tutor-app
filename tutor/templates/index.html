@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+{% extends 'base.html'%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Index</title>
+</head>
+<body>
+{% block content %}
+    <h1>Index Page is working :)</h1>
+    <p>hello {{request.user}}</p>
+<p>{{ something }}</p>
+{% for item in listofreviews %}
+<ul>
+    <li>{{item}}</li>
+</ul>
+{% endfor %}
+{% endblock %}
+
+</body>
+</html>

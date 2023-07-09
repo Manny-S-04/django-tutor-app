@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+{% extends 'base.html'%}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/style.css">
+    <title>Navbar</title>
+</head>
+<body>
+{% block content %}
+{% block navbar %}
+{{block.super}}
+<nav class="navbar navbar-dark" style="height:90px; background-color:#375a7f">
+    <button class="button type1">
+  <span class="btn-txt">Home</span>
+</button>
+    <button class="button type1">
+  <span class="btn-txt">About Us</span>
+</button>
+    <button class="button type1">
+  <span class="btn-txt">Services</span>
+</button>
+    <button class="button type1">
+  <span class="btn-txt">Reviews</span>
+</button>
+    <button class="button type1">
+  <span class="btn-txt">Contact Us</span>
+</button>
+</nav>
+{% endblock %}
+
+<p> HI </p>
+    <button style=" height: 50px;
+  width: 200px;">
+  <span class="btn-txt">Contact Us</span>
+</button>
+    <button class="button type1">
+  <span class="btn-txt">TEST</span>
+</button>
+{% endblock %}
+
+</body>
+</html>
