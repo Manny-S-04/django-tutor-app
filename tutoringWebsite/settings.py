@@ -125,10 +125,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    BASE_DIR / 'tutor' / 'templates' / 'static',
+    BASE_DIR / 'static' / 'admin',
 ]
 STATIC_ROOT = BASE_DIR / 'static'
 
+#tutoringWebsite/static/admin
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

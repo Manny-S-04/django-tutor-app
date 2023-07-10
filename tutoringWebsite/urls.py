@@ -15,6 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
+from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
 from tutor.views import index_view, reviews_view, callback_view, services_view , about_view, contactus_view, navbar
 
@@ -32,3 +33,6 @@ urlpatterns = [
     path('contactus/', contactus_view),
     path('navbar/', navbar),
 ]
+
+
+urlpatterns += staticfiles_urlpatterns()
