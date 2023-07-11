@@ -9,10 +9,8 @@ from .models import Review, CallBack
 
 def index_view(request):
     context = {
-        "something": "somethings value",
-        "listofreviews": ["review1", "review2", "review3"]
     }
-    return render(request, "index.html", context)
+    return render(request, "home.html", context)
 
 
 #######################################################
@@ -53,24 +51,27 @@ def callback_view(request):
         'callbackdata': callback,
         'form': form,
     }
-    return render(request, 'request-a-callback.html', context)
+    return render(request, 'callback.html', context)
 
 
 #######################################################
 # CallBack
 #######################################################
 
-def services_view(request):
-    return render(request, 'services.html')
-
-
 def contactus_view(request):
     return render(request, 'contact-us.html')
 
 
 def about_view(request):
-    return render(request, 'about.html')
+    return render(request, 'aboutus.html')
 
 
 def navbar(request):
     return render(request, 'navbar.html')
+
+def maths_view(request):
+    return render(request, 'maths.html')
+
+def physics_view(request):
+    return render(request, 'physics.html')
+

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+{% extends 'nav.html' %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport 5" content="width=device-width, initial-scale=1.0">
+    <title>{%block page-title%}Reviews{%endblock%}</title>
+</head>
+
+<body>
+    <header>
+        {% block navbar%}
+        {{block.super}}
+        {% endblock %}
+    </header>
+    {%block content %}
+    <div class="container-fluid">
+    <div class="cardcontainer">
+    <div class="card">
+        <div>
+          <h2>Invest in Valby's sparkling new construction</h2>
+          <h3>Type: Residential rental</h3>
+          <p>
+            Soon you can invest in Sid Harman's new attractive property, set in
+            the heart of Athens.
+          </p>
+          <button type="button">Show the property project</button>
+        </div>
+      </div>
+    </div>
+</div>
+    {% endblock %}
+</body>
+
+</html>
