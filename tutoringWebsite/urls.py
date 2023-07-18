@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
-from tutor.views import index_view, reviews_view, callback_view, about_view, contactus_view, navbar,maths_view,physics_view
+from tutor.views import index_view, reviews_view, callback_view, about_view, contactus_view, navbar,maths_view,physics_view, test_view
 
 
 urlpatterns = [
@@ -31,6 +31,7 @@ urlpatterns = [
     path('navbar/', navbar),
     path('maths/',maths_view),
     path('physics/',physics_view),
+    path('test/', test_view)
 ]
 
 
