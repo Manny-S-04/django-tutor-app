@@ -9,6 +9,13 @@ class Review(models.Model):
     lastname = models.CharField(max_length=50, blank=False, null=False)
     stars = models.PositiveSmallIntegerField(blank=False, null=False)
     description = models.TextField(blank=True)
+    
+    def as_json(self):
+        return dict(
+            review_id=self.id, review_firstname=self.firstname,
+            review_lastname=self.lastname, 
+            review_stars=self.stars,
+            review_description=self.description)
 
 
 class CallBack(models.Model):

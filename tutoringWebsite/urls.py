@@ -17,21 +17,21 @@ from django.contrib import admin
 from django.urls import path
 from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 
-from tutor.views import index_view, reviews_view, callback_view, services_view , about_view, contactus_view, navbar
+from tutor.views import index_view, reviews_view, callback_view, about_view, contactus_view, navbar,maths_view,physics_view, test_view
 
 
 urlpatterns = [
     path('', index_view),
     path('admin/', admin.site.urls),
     path('index/', index_view),
+    path('home/', index_view),
     path('reviews/', reviews_view, name='reviews'),
-    path('callbacks', callback_view, name='callbacks'),
-    path('services/', services_view),
-    path('about-us/', about_view, name='about-us'),
-    path('aboutus/', about_view),
-    path('contact-us/', contactus_view),
-    path('contactus/', contactus_view),
+    path('callback/', callback_view, name='callbacks'),
+    path('about-us/', about_view),
     path('navbar/', navbar),
+    path('maths/',maths_view),
+    path('physics/',physics_view),
+    path('test/', test_view)
 ]
 
 

@@ -1,7 +1,11 @@
+import json
+from django.core.serializers.json import DjangoJSONEncoder
 from django.shortcuts import render, redirect
-from django.http import HttpResponse
+from django.http import JsonResponse
+from django.core import serializers
 from .forms import ReviewForm, CallBackForm
 from .models import Review, CallBack
+
 
 
 # Create your views here.
@@ -9,10 +13,8 @@ from .models import Review, CallBack
 
 def index_view(request):
     context = {
-        "something": "somethings value",
-        "listofreviews": ["review1", "review2", "review3"]
     }
-    return render(request, "index.html", context)
+    return render(request, "home.html", context)
 
 
 #######################################################
@@ -20,17 +22,22 @@ def index_view(request):
 #######################################################
 def reviews_view(request):
     reviews = Review.objects.all()
-    form = ReviewForm(request.POST or None)
-
-    if form.is_valid():
-        form.save()
-        return redirect('reviews')  # Redirect back to the reviews page after form submission
-
+    reviews_ser = serializers.serialize('json', reviews)
+    if request.method == 'POST':
+        form = ReviewForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('reviews')
+    else:
+        form = ReviewForm()
+        
     context = {
         'reviews': reviews,
+        'reviews_ser' : reviews_ser,
         'form': form,
     }
     return render(request, 'reviews.html', context)
+
 
 
 #######################################################
@@ -47,30 +54,45 @@ def callback_view(request):
 
     if form.is_valid():
         form.save()
-        return redirect('callbacks')  # Redirect back to the reviews page after form submission
+        return redirect('callbacks')
 
     context = {
         'callbackdata': callback,
         'form': form,
     }
-    return render(request, 'request-a-callback.html', context)
+    return render(request, 'callback.html', context)
 
 
 #######################################################
 # CallBack
 #######################################################
 
-def services_view(request):
-    return render(request, 'services.html')
-
-
 def contactus_view(request):
     return render(request, 'contact-us.html')
 
 
 def about_view(request):
-    return render(request, 'about.html')
+    return render(request, 'aboutus.html')
 
 
 def navbar(request):
     return render(request, 'navbar.html')
+
+def maths_view(request):
+    return render(request, 'maths.html')
+
+def physics_view(request):
+    return render(request, 'physics.html')
+
+def test_view(request):
+    callback = CallBack.objects.all()
+    form = ReviewForm(request.POST or None)
+
+    if form.is_valid():
+        form.save()
+        return redirect('test')
+
+    context = {
+        'form': form,
+    }
+    return render(request, 'test.html', context)

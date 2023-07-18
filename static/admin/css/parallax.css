@@ -1,0 +1,41 @@
+section {
+  transform-style: preserve-3d;
+  position: relative;
+  height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.no-parallax {
+  background-color:#C5F0A4;
+  z-index: 999;
+  height: 700px;
+  overflow: auto;
+}
+
+.parallax {
+  height: 20vh;
+}
+
+section h1 {
+  text-align: center;
+  font-size: 60px;
+}
+
+.parallax::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateZ(-1px) scale(1.5);
+  background-size: 100%;
+  z-index: -1;
+}
+
+.bg::after {
+  background: url("image.jpg");
+  background-size: cover;
+}
