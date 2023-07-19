@@ -1,8 +1,10 @@
 import json
 from django.core.serializers.json import DjangoJSONEncoder
 from django.shortcuts import render, redirect
-from django.http import JsonResponse
+from django.http import JsonResponse, HttpResponse
 from django.core import serializers
+from django.core.mail import EmailMessage,send_mail
+from django.conf import settings
 from .forms import ReviewForm, CallBackForm
 from .models import Review, CallBack
 
@@ -32,17 +34,14 @@ def reviews_view(request):
         form = ReviewForm()
         
     context = {
-        'reviews': reviews,
         'reviews_ser' : reviews_ser,
         'form': form,
     }
     return render(request, 'reviews.html', context)
 
 
+#######################################################
 
-#######################################################
-# REVIEWS
-#######################################################
 
 #######################################################
 # CallBack
@@ -50,22 +49,31 @@ def reviews_view(request):
 
 def callback_view(request):
     callback = CallBack.objects.all()
-    form = CallBackForm(request.POST or None)
-
-    if form.is_valid():
-        form.save()
-        return redirect('callbacks')
-
+    if request.method == 'POST':
+        form = CallBackForm(request.POST)
+        if form.is_valid():
+            #email = form.cleaned_data['email']
+            #number = form.cleaned_data['number']
+            #message = form.cleaned_data['message']
+            email = request.POST['email']
+            number = request.POST['number']
+            message = request.POST['message']
+            form.save()
+            send_mail("Request Callback", f"Callback request from : {email}, {number},\n\n{message}", "mansimran2001@googlemail.com", ["mansimran2001@googlemail.com"])
+            send_mail("Thank you for reaching out!", f"Dear Parent,\n\nThank you for requesting a callback. We have received your request and will get in touch with you as soon as possible on {number}.\n\nBest regards\n", "mansimran2001@googlemail.com", [f"{email}"])
+            return redirect('callbacks')
+        else:
+            return HttpResponse(form.errors)
+    else:
+        form = CallBackForm()
     context = {
-        'callbackdata': callback,
         'form': form,
     }
     return render(request, 'callback.html', context)
 
 
 #######################################################
-# CallBack
-#######################################################
+
 
 def contactus_view(request):
     return render(request, 'contact-us.html')
