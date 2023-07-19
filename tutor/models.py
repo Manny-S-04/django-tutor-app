@@ -1,5 +1,6 @@
 from django.db import models
 from phonenumber_field.modelfields import PhoneNumberField
+from django.core.validators import RegexValidator
 
 
 # Create your models here.
@@ -21,5 +22,6 @@ class Review(models.Model):
 class CallBack(models.Model):
     objects = models.Manager()
     email = models.CharField(max_length=50, unique=True, null=False, blank=False)
-    number = PhoneNumberField(unique=True, null=False, blank=False)
+    #number = PhoneNumberField(unique=True, null=False, blank=False)
+    number = models.CharField(unique=True, max_length=11, null=False, blank=False)
     message = models.TextField()
