@@ -1,27 +1,109 @@
-section {
-  transform-style: preserve-3d;
+body {
+  margin: 0;
+  font-family: "Euclid Circular A";
+  /*background: #181717 linear-gradient(60deg, #ffffff, #776a6a);*/
+  background: #fff;
+  background-image: url("https://cdn.discordapp.com/attachments/714968085223702610/1131857004630122577/pexels-pixabay-355948.jpg");
+  background-size: cover;
+  color: rgba(255, 255, 255, 0.7);
+  overflow-x: hidden;
+}
+
+img {
+  position: fixed;
+  z-index: 0;
+  transition: 0.3s;
+}
+
+body img:nth-child(1) {
+  width: 200px;
+  top: 30px;
+}
+
+body img:nth-child(2) {
+  width: 400px;
+  left: 500px;
+  top: 300px;
+}
+
+body img:nth-child(3) {
+  width: 100px;
+  left: 60px;
+  top: 600px;
+}
+
+.home-content {
   position: relative;
-  height: 75vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  z-index: 1;
+  padding: 100px 15%;
+}
+
+h1{
+  position: relative;
+  z-index: 1;
+  margin: 20px 15%;
+  color: #ffffff;
+}
+
+p,
+h2,
+h5{
+  position: relative;
+  z-index: 1;
+  margin: 20px 15%;
+  color: #ffffff;
+  font-size: 18px;
+}
+.custom-list,
+.custom-list li {
+  position: relative;
+  z-index: 1;
+  margin: 20px 15%;
+  color: #ffffff;
+  font-size: 18px;
+}
+p {
+  opacity: 1;
+  color: #ffffff;
+}
+
+section {
+  padding: 40px 0;
+}
+
+.image {
+  height: 380px;
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;  
+}
+
+.text {
+  position: relative;
+}
+
+.text::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 150%;
+  height: 110%;
+  background: rgba(3, 46, 70, 0.7);
+  rotate: -3deg;
+  translate: -50% -50%;
 }
 
 .no-parallax {
-  background-color:#C5F0A4;
+  background: none;
   z-index: 999;
-  height: 700px;
-  overflow: auto;
 }
 
 .parallax {
-  height: 20vh;
+  height: 50vh;
 }
 
-section h1 {
-  text-align: center;
-  font-size: 60px;
-}
 
 .parallax::after {
   content: " ";
@@ -33,9 +115,4 @@ section h1 {
   transform: translateZ(-1px) scale(1.5);
   background-size: 100%;
   z-index: -1;
-}
-
-.bg::after {
-  background: url("image.jpg");
-  background-size: cover;
 }
