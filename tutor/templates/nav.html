@@ -29,6 +29,8 @@
         var listofReviews = JSON.parse('{{reviews_ser|escapejs}}');
     </script>
     <script src="{% static 'js/button.js' %}"></script>
+    <script src="{% static 'js/parallax.js' %}"></script>
+
     <title>{% block page-title %}Navbar{% endblock %}</title>
     <style>
         html,
@@ -43,7 +45,7 @@
         {% block navbar%}
         {{block.super}}
         <nav class="navbar navbar-expand-lg navbar-dark navbar-light">
-            <a class="navbar-brand" href="/home" style="color: #255B5C;">WebsiteName</a>
+            <a class="navbar-brand" href="/home" style="color: #fff;">WebsiteName</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -52,7 +54,7 @@
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active dropdown">
                         <a class="nav-link dropdown-toggle btn" href="#" id="navbarDropdown" role="button"
-                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #255B5C;">
+                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: #fff;">
                             Services
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
@@ -63,11 +65,11 @@
                         </div>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link btn" href="/reviews" style="color: #255B5C;">Reviews<span
+                        <a class="nav-link btn" href="/reviews" style="color: #fff;">Reviews<span
                                 class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link btn" href="/about-us" style="color: #255B5C;">About Us<span
+                        <a class="nav-link btn" href="/about-us" style="color: #fff;">About Us<span
                                 class="sr-only">(current)</span></a>
                     </li>
                 </ul>
@@ -78,7 +80,6 @@
         </nav>
         {% endblock %}
     </header>
-
     {% block content %}
     {% endblock %}
 </body>

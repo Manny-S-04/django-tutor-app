@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     <p>
                         ${description}
                     </p>
-                </div>`;
+                </div><br>`;
                 filterList.appendChild(li).innerHTML = reviewCard;
             }
         }
@@ -57,7 +57,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 <p>
                     ${description}
                 </p>
-            </div>`;
+            </div><br>`;
             if (stars == varStar) {
                 filterList.appendChild(li).innerHTML = reviewCard;
             }

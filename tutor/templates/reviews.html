@@ -18,7 +18,7 @@
     </header>
     {% block content %}
     <section class="no-parallax">
-        <div class="container" style="position: absolute; top: 10px; left: 0px;">
+        <div class="container" style="position: absolute; top: 90px; left: 0px;">
             <div class="dropdown">
                 <button class="btn btn-secondary dropdown-toggle .active" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     <span id="dropdownText">Filter by Rating</span>
@@ -48,10 +48,12 @@
         <div class="container d-flex justify-content-center align-items-center">
             <form method="POST" class="form">
                 {% csrf_token %}
+
                 <ul style="list-style-type: none;">
-                    <li>
-                        <h2 style="color: black;">Leave a Review</h2>
+                    <li style="display: flex; justify-content: center;">
+                        <h1>Leave a Review</h1>
                     </li>
+                    <br>
                     <li>
                         <div class="rating">
                             {% for value, label in form.stars.field.widget.choices %}
