@@ -5,11 +5,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% load static%}
+    {% load static %}
     <title>{% block page-title %}Home{% endblock %}</title>
 </head>
 
-<body>
+{% block bodytag %}<body class="homepage">{%endblock%}
     <header>
         {% block navbar %}
         {{block.super}}

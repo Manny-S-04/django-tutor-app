@@ -1,11 +1,30 @@
 <!DOCTYPE html>
+{% extends 'nav.html' %}
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    {% load static%}
+    <title>{% block page-title %}Home{% endblock %}</title>
 </head>
+
 <body>
-    
+    <header>
+        {% block navbar %}
+        {{block.super}}
+        {% endblock %}
+    </header>
+    {% block content %}
+    <div style="padding-top: 120px;">
+        <section class="text">
+        </section>
+        <section class="image image-2"></section>
+        <section class="text">
+
+        </section>
+    </div><br><br><br><br><br><br><br><br><br><br><br><br><br>
+    {% endblock %}
 </body>
+
 </html>
