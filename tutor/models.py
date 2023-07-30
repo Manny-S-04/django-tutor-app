@@ -7,7 +7,7 @@ from django.core.validators import RegexValidator
 class Review(models.Model):
     objects = models.Manager()
     firstname = models.CharField(max_length=50, blank=False, null=False)
-    lastname = models.CharField(max_length=50, blank=False, null=False)
+    lastname = models.CharField(max_length=50, blank=True, null=True)
     stars = models.PositiveSmallIntegerField(blank=False, null=False)
     description = models.TextField(blank=True)
     

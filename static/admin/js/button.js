@@ -31,12 +31,15 @@ document.addEventListener('DOMContentLoaded', function () {
                 let li = document.createElement("li");
                 let firstname = review.fields.firstname;
                 let lastname = review.fields.lastname;
+                if (!lastname){
+                    lastname = " ";
+                }
                 let stars = review.fields.stars;
                 let description = review.fields.description;
                 reviewCard = `
                     <div class="card">
-                    <h2>${firstname} - ${lastname}</h2><br>
-                    <h3>Stars: ${stars}</h3>
+                    <h2>${firstname} ${lastname}</h2><br>
+                    <h3>${"★".repeat(stars)}</h3>
                     <p>
                         ${description}
                     </p>
@@ -48,12 +51,15 @@ document.addEventListener('DOMContentLoaded', function () {
             let li = document.createElement("li");
             let firstname = review.fields.firstname;
             let lastname = review.fields.lastname;
+            if (!lastname){
+                lastname = "";
+            }
             let stars = review.fields.stars;
             let description = review.fields.description;
             reviewCard = `
                 <div class="card">
-                <h2>${firstname} - ${lastname}</h2><br>
-                <h3>Stars: ${stars}</h3>
+                <h2>${firstname}  ${lastname}</h2><br>
+                <h3>${"★".repeat(stars)}</h3>
                 <p>
                     ${description}
                 </p>

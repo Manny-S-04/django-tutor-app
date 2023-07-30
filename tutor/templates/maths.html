@@ -1,11 +1,79 @@
 <!DOCTYPE html>
+{% extends 'nav.html' %}
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    {% load static%}
+    <title>{% block page-title %}Maths{% endblock %}</title>
 </head>
+
 <body>
-    
+    <header>
+        {% block navbar %}
+        {{block.super}}
+        {% endblock %}
+    </header>
+    {% block content %}
+    <span class="title-container" style="padding-top: 120px;">
+        <h1 style="color: #809974; font-size: 75px;">Mathematics (GCSE & A Level)</h1>
+    </span>
+    <div style="padding-top: 120px; padding-bottom: 120px;">
+        <section class="text" style="transform: rotate(1deg);">
+            <h2>Beyond GCSE and A-Level: Developing Critical Thinking and University-Level Understanding</h2>
+            <p>
+
+                At [Your Tutoring Services Name], we go beyond the confines of GCSE and A-Level syllabi. We are
+                passionate about preparing students for higher-level mathematical challenges and nurturing critical
+                thinking skills. Our mathematics tutoring services focus on the following aspects to provide a
+                comprehensive understanding of the subject:
+
+                Conceptual Understanding and University-Level Topics
+
+                We delve into advanced mathematical topics beyond the school curriculum. By introducing university-level
+                concepts, we stimulate intellectual curiosity and broaden students' perspectives on the subject.
+
+                Our tutors are well-versed in university-level mathematics, enabling them to guide students in exploring
+                more complex and abstract mathematical ideas.
+
+                Problem-Solving Skills and Applied Mathematics
+
+                Our tutoring approach emphasizes problem-solving skills, encouraging students to tackle challenging
+                mathematical problems with confidence and creativity.
+
+                We explore applications of mathematics in various fields, including sciences, engineering, economics,
+                and more. By relating math to real-world scenarios, we deepen students' appreciation for its practical
+                applications.
+
+                Analytical Thinking and Mathematical Proofs
+
+                We focus on developing analytical thinking skills and logical reasoning. Students learn to construct
+                mathematical proofs, fostering a deeper understanding of mathematical principles.
+
+                Preparing for Higher Education and Beyond
+
+                For students aspiring to pursue mathematics or related fields at university, we provide guidance on
+                preparing for entrance exams and developing the skills necessary for success in higher education.
+
+                We instill a growth mindset, encouraging students to embrace challenges and view mistakes as
+                opportunities for learning and improvement.
+            </p>
+        </section>
+        <section class="image image-2"></section>
+        <section class="text" style="transform: rotate(1deg);">
+            <p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ullam deleniti totam fuga. Voluptates
+                inventore pariatur quo dicta nesciunt voluptas illum perferendis eius deserunt, deleniti nobis,
+                accusantium aliquam laborum ad corporis.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae officia, hic animi expedita corporis
+                blanditiis, maiores, praesentium ullam iure doloremque ducimus in! Sed nulla eligendi aut ipsum sequi
+                libero sunt.
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ratione dolor repellat neque rem odit sed hic
+                provident eum labore similique, quisquam assumenda sequi quas iste illum id cumque voluptatem iusto.
+            </p>
+        </section>
+    </div>
+    {% endblock %}
 </body>
+
 </html>
