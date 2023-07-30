@@ -3,8 +3,11 @@ body {
   font-family: "Euclid Circular A";
   /*background: #181717 linear-gradient(60deg, #ffffff, #776a6a);*/
   background: #fff;
-  background-image: url("https://cdn.discordapp.com/attachments/714968085223702610/1131857004630122577/pexels-pixabay-355948.jpg");
+  background-image: url("https://images.pexels.com/photos/924824/pexels-photo-924824.jpeg?auto=compress&cs=tinysrgb&w=1600");
   background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
   color: rgba(255, 255, 255, 0.7);
   overflow-x: hidden;
 }
@@ -90,8 +93,9 @@ section {
   left: 50%;
   width: 150%;
   height: 110%;
-  background: rgba(3, 46, 70, 0.7);
-  rotate: -3deg;
+  /* background: rgba(3, 46, 70, 0.7); */
+  background: rgba(50,50,100, 0.7);
+  rotate: -1deg;
   translate: -50% -50%;
 }
 
