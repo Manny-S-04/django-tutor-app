@@ -32,7 +32,6 @@ def reviews_view(request):
             return redirect('reviews')
     else:
         form = ReviewForm()
-        
     context = {
         'reviews_ser' : reviews_ser,
         'form': form,
@@ -52,9 +51,6 @@ def callback_view(request):
     if request.method == 'POST':
         form = CallBackForm(request.POST)
         if form.is_valid():
-            #email = form.cleaned_data['email']
-            #number = form.cleaned_data['number']
-            #message = form.cleaned_data['message']
             email = request.POST['email']
             number = request.POST['number']
             message = request.POST['message']
