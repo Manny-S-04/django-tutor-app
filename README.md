@@ -6,7 +6,7 @@ My Personal Business Website
 
 ![frontpage](https://cdn.discordapp.com/attachments/714968085223702610/1136392371806945443/image.png)
 
-![maths](https://cdn.discordapp.com/attachments/714968085223702610/1136392371806945443/image.png)
+![maths](https://cdn.discordapp.com/attachments/714968085223702610/1136392416761479318/image.png)
 
 ![physics](https://cdn.discordapp.com/attachments/714968085223702610/1136392484272996402/image.png)
 
