@@ -15,8 +15,6 @@ document.addEventListener('DOMContentLoaded', function () {
                 displayReviews('All');
             }
             dropdown.innerHTML = buttons[i].innerHTML;
-            console.log(buttons[i].innerHTML);
-            console.log(variableStar);
         });
         }
     };

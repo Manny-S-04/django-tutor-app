@@ -29,6 +29,12 @@
     </script>
     <script src="{% static 'js/button.js' %}"></script>
     <script src="{% static 'js/parallax.js' %}"></script>
+    <script>
+                document.addEventListener('DOMContentLoaded', function () {
+            var radioButton = document.querySelector('input[type="radio"][value="5"]');
+            radioButton.checked = true;
+        });
+    </script>
 
     <title>{% block page-title %}Navbar{% endblock %}</title>
 </head>
@@ -38,7 +44,7 @@
         {% block navbar%}
         {{block.super}}
         <nav class="navbar navbar-expand-lg navbar-dark navbar-light" style="background-color: rgba(37, 50, 44,1)">
-            <a class="navbar-brand" href="/home" style="color: #fff;">WebsiteName</a>
+            <a class="navbar-brand" href="/home" style="color: #fff;">TheMaidenheadTutor</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
